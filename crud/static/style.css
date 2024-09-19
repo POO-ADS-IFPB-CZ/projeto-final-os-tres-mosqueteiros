@@ -1,0 +1,17 @@
+body{
+    background-color: aquamarine;
+}
+.conteudo{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+
+}
+.cursos{
+    flex-direction: column;
+    height: 25%;
+    margin: 3px;
+    background-color: aquamarine;
+    justify-content: center;
+}

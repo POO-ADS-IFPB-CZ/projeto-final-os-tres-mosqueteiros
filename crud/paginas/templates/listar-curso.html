@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% /static/ 'style.css' %}">
+
+    <title>Listar Curso</title>
+</head>
+<body>
+    <p>HELLO GUYS</p>
+    <a href="{% url 'criar-curso' %}">Criar um curso</a>
+    <div class="conteudo">
+     {% for curso in cursos %}
+            <div class="cursos">
+                
+                <h2>{{curso.titulo}}</h2>
+                <img src="{{curso.image.url}}" width="150" alt="{{curso.title}}">
+			    <p>{{curso.descricao}}</p>
+                <a href="{% url 'curso-detalhes' curso.id %}">Ver</a> 
+            
+            </div>
+	{% endfor %}
+    </div>
+    <p>UEEEE</p>
+</body>
+</html>
