@@ -1,10 +1,11 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.shortcuts import get_object_or_404
-from paginas.models import  Curso
+from paginas.models import  Curso, Aulas
 from .forms import CursoForm
 from django.contrib import messages
 from django.urls import reverse
 from django.http import HttpResponseRedirect
+from .forms import AulaForm 
 
 
 def listar_cursos(request):
@@ -32,9 +33,11 @@ def criar_curso(request):
 def curso_detalhes(request, id):
     template_name = 'curso-detalhes.html' # template
     curso = Curso.objects.get(id=id) # Metodo Get
-    context = { # cria context para chamar no template
-        'curso': curso
-        }
+    aulas = curso.aulas.all()  # Obtém todas as aulas associadas ao curso
+    context = {
+        'curso': curso,
+        'aulas': aulas  # Passa as aulas associadas ao curso
+    }
     return render(request, template_name, context) # render
 
 def curso_update(request, id):
@@ -48,11 +51,25 @@ def curso_update(request, id):
          
     return render(request, 'criar-curso.html', {"form": form}) # nesse template
 
-from django.urls import reverse
-from django.http import HttpResponseRedirect
+
+
 
 def deletar_curso(request, id): 
     curso = Curso.objects.get(id=id) # pelo ID pega o objeto
     curso.delete() # deletar
-    messages.success(request, 'O curso foi deletado com sucesso') # quando deleta post
-    return HttpResponseRedirect(reverse('listar-curso')) # retorna rota post-list
+    messages.success(request, 'O curso foi deletado com sucesso') # quando deleta curso
+    return HttpResponseRedirect(reverse('listar-curso')) # retorna rota listar curso
+
+def adicionar_aula(request, curso_id):
+    curso = get_object_or_404(Curso, id=curso_id)  # Encontra o curso pelo ID
+    if request.method == 'POST':
+        form = AulaForm(request.POST, request.FILES)  # Suporte a arquivos se houver vídeo
+        if form.is_valid():
+            aula = form.save(commit=False)
+            aula.curso = curso  # Associa a nova aula ao curso
+            aula.save()
+            return redirect('curso-detalhes', id=curso.id)  # Redireciona para os detalhes do curso
+    else:
+        form = AulaForm()
+
+    return render(request, 'adicionar_aula.html', {'form': form, 'curso': curso})

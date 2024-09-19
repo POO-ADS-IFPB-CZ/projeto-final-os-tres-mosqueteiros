@@ -12,5 +12,21 @@
         <p>{{curso.descricao}}</p>  
         <a href="{% url 'curso-update' curso.id %}">Atualizar</a>
         <a href="{% url 'deletar-curso' curso.id %}">Deletar</a>
+        <a href="{% url 'adicionar_aula' curso.id %}">Adicionar Nova Aula</a>
+        {% if aulas %}
+                {% for aula in aulas %}
+                    <div class="aulas">
+                        <h1>{{ aula.titulo }}</h2>
+                        <img src="{{aula.video.url}}" width="150" alt="{{curso.title}}">
+                        <p>{{aula.descricao}}</p>
+
+                        
+                    </div>
+                {% endfor %}
+        {% else %}
+            <p>Este curso ainda não tem aulas.</p>
+        {% endif %}
+        
+
 </body>
 </html>
