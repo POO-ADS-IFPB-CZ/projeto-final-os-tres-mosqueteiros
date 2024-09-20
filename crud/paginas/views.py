@@ -73,3 +73,11 @@ def adicionar_aula(request, curso_id):
         form = AulaForm()
 
     return render(request, 'adicionar_aula.html', {'form': form, 'curso': curso})
+
+def deletar_aula(request, id):
+    aula = Aulas.objects.get(id=id) # pelo ID pega o objeto
+    idCurso = aula.curso.id
+    aula.delete() # deletar
+
+    messages.success(request, 'a aula foi deletada com sucesso') # quando deleta curso
+    return redirect('curso-detalhes', idCurso)

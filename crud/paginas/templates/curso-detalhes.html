@@ -19,7 +19,9 @@
                         <h1>{{ aula.titulo }}</h2>
                         <img src="{{aula.video.url}}" width="150" alt="{{curso.title}}">
                         <p>{{aula.descricao}}</p>
-
+                        <p>{{aula.id}} </p>
+                        <a href="{% url 'deletar_aula' aula.id %}">Excluir</a>
+                            
                         
                     </div>
                 {% endfor %}
