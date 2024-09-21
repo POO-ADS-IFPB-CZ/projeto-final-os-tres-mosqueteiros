@@ -58,6 +58,7 @@ body > main > img{
       gap: 20px;
       border-radius: 20px;
       padding: 20px;
+      box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.05);
 
 }
 .cursos{

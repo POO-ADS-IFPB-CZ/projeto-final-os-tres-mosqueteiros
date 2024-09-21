@@ -1,5 +1,5 @@
 body{
-    background-color: #F2F2F2;
+    background: linear-gradient(to bottom, #1CA6A6 15%, #F2F2F2 85%);
     margin: 0;
 }
 body > nav {
@@ -57,6 +57,7 @@ body > main > img{
       gap: 20px;
       border-radius: 20px;
       padding: 20px;
+      box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.05);
 
 }
 .cursos{
