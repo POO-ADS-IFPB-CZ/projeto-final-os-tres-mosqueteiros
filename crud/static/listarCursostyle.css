@@ -47,7 +47,8 @@ body > main > img{
     display: block;
     margin: auto;
     border-radius: 15px;
-    height: 500px;
+    height: 400px;
+    
     
 
 }
@@ -123,4 +124,9 @@ footer{
 
     
 }
+@media (max-width: 1400px) {
+    body > main > img{
+        height: 350px;
+    }
+  }
 
