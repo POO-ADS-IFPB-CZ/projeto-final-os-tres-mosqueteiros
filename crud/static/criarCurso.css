@@ -1,0 +1,83 @@
+body{
+    background: linear-gradient(to bottom, #F2F2F2 50%, #1CA6A6);
+    margin: 0;
+}
+body > nav {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+
+}
+
+#cabecalho{
+    background-color: #1CA6A6;
+   
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+    
+}
+#cabecalho > a{
+    text-decoration: none;
+    color: #BAD9D9;
+    padding: 25px 15px;
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+#logo{
+    background-color: #1CA6A6;
+    color: #BAD9D9;
+    display: flex;
+    flex-direction: row;
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+main{margin: 20px;
+        
+}
+form{
+    height: 200px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.05);
+}
+.estruturabloco{
+    display: flex;
+    flex-direction: row;
+    margin: 20px 0px 20px 10px;
+}
+.blocoAoLado{
+    display: flex;
+}
+.texto{
+    padding: 20px 20px 20px 10px;
+    color: #8C031C;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+img{
+    width: 300px;
+    border-radius: 10px;
+    
+}
+button{
+    background-color: #1CA6A6; 
+            border: none;              
+            color: #BAD9D9;              
+            padding: 15px 32px;        
+            text-align: center;        
+            text-decoration: none;     
+            display: inline-block;     
+            font-size: 16px;           
+            margin: 4px 2px;           
+            cursor: pointer;           
+            border-radius: 8px;        
+            transition: background-color 0.3s ease;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.05);
+}
+button:hover{
+    background-color: #BAD9D9;
+    color: #1CA6A6;
+}
+#cabecalho >a:hover{
+    background-color: #BAD9D9;
+    color: #1CA6A6;
+}
