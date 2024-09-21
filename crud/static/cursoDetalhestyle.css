@@ -1,6 +1,7 @@
 body{
     background-color: #F2F2F2;
     margin: 0;
+    font-family: Arial, sans-serif;
 }
 body > nav {
     display: grid;
@@ -40,15 +41,28 @@ body > main > h1{
 text-align: center;
 font-family: Arial, Helvetica, sans-serif;
 color: #8C031C;
-margin: 40px 0px;
+margin: 0px;
 
 }
 body > main > img{
     display: block;
     margin: auto;
     border-radius: 15px;
-    height: 400px;
+    height: 500px;
+    width: 60%;
     
+}
+main {
+    display: flex;
+    flex-direction: column;
+}
+.descricao-curso{
+    align-self: center;
+    width: 60%;
+    background-color: rgb(0,0,0,0.2);
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 1.5rem;
 }
 .conteudo{
     background-color: #F2F2F2;
@@ -60,12 +74,13 @@ body > main > img{
 
 }
 .cursos{
-    height: 330px;
+    height: 450px;
     background-color:#F2F2F2;
       padding: 20px ;
       margin: 0px 5px;
       text-align: center;
       border-radius: 10px;
+      border: 3px solid #1CA6A6;
       
 }
 .botoes{

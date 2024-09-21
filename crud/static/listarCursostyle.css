@@ -1,6 +1,8 @@
 body{
     background: linear-gradient(to bottom, #F2F2F2 50%, #1CA6A6);
     background-color: #F2F2F2;
+
+    width: 100%;
     margin: 0;
 }
 body > nav {
@@ -47,7 +49,8 @@ body > main > img{
     display: block;
     margin: auto;
     border-radius: 15px;
-    height: 500px;
+    height: 400px;
+    width: 100%;
     
 
 }
@@ -58,16 +61,22 @@ body > main > img{
       gap: 20px;
       border-radius: 20px;
       padding: 20px;
+      height: 450px;
 
 }
 .cursos{
-    height: 300px;
+    height: 450px;
     background-color:#F2F2F2;
-      padding: 20px;
-      margin: 5px;
-      text-align: center;
-      border-radius: 10px;
+    padding: 20px;
+    margin: 5px;
+    border-radius: 10px;
       
+}
+h2{
+    text-align: center;
+}
+p{
+    text-align: start;
 }
 .botao{
     background-color: #1CA6A6;

@@ -19,8 +19,14 @@ class Curso(models.Model):
 class Aulas(models.Model):
     titulo = models.CharField(max_length=100)
     descricao = models.TextField()
-    video = models.FileField()
+    video = models.URLField(max_length=500)
     curso = models.ForeignKey(Curso, on_delete=models.CASCADE, related_name='aulas')
+
+    
+    def save(self, *args, **kwargs):
+        if 'watch?v=' in self.video:
+            self.video = self.video.replace('watch?v=', 'embed/')
+        super(Aulas, self).save(*args, **kwargs)
     
 
 

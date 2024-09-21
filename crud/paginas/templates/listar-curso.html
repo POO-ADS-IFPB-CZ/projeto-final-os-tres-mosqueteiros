@@ -4,8 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <link rel="stylesheet" type="text/css" href="../../static/listarCursostyle.css" />
+    <link rel="stylesheet" href="{% static 'listarCursostyle.css' %}">
 
     <title>Listar Curso</title>
 </head>
@@ -37,10 +36,6 @@
                     <a class="botao2" href="{% url 'curso-detalhes' curso.id %}">Ver</a>
         
                 </div>
-                <div class="cursos">Item 1</div>
-                <div class="cursos">Item 2</div>
-                <div class="cursos">Item 3</div>
-                <div class="cursos">Item 3</div>
                 
             {% endfor %}
         </div>
