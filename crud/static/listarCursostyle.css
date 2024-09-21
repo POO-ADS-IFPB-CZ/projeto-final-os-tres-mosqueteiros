@@ -1,6 +1,5 @@
 body{
     background: linear-gradient(to bottom, #F2F2F2 50%, #1CA6A6);
-    background-color: #F2F2F2;
     margin: 0;
 }
 body > nav {
@@ -96,7 +95,7 @@ body > main > img{
     width: 8%;
     font-family: Arial, Helvetica, sans-serif;
     color: #BAD9D9;
-    font-size: 18px;
+    font-size: 14px;
     
 }
 nav>a .botao .botao2{
@@ -116,7 +115,7 @@ color: #1CA6A6;
 }
 footer{
     border-radius: 10px 10px 0px 0px;
-    background: linear-gradient(to bottom, #38B0B0 , #1CA6A6);
+    background: linear-gradient(to bottom, #39B0B0 , #1CA6A6);
     
     text-align: center;
     color: #BAD9D9;
