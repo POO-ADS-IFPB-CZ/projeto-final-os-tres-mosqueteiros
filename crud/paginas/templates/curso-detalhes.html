@@ -4,47 +4,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="{% static 'cursos.css' %}" />
+    <link rel="stylesheet" href="../../static/cursoDetalhestyle.css">
     <title>Document</title>
 </head>
 <body>
-        <img class="titulo-curso" src="{{curso.image.url}}" >
-          
-        
-            <div class="botoes">
-                <a id="atualizar" class="botao" href="{% url 'curso-update' curso.id %}">Atualizar</a>
-                <a id="excluir" class="botao" href="{% url 'deletar-curso' curso.id %}">Deletar</a>
-                <a  id="adicionar" class="botao" href="{% url 'adicionar_aula' curso.id %}">Adicionar Nova Aula</a>
-            </div>
-            <h1 class="titulo">{{curso.titulo}}</h1>
-            <div class="conteudo">
-            <p>{{curso.criado_em}}</p>
-
-            <p>{{curso.descricao}}</p>  
-            
-            <div class="bloco-aulas">
-            <h1 class="h1aula">Aulas</h1>
-            {% if aulas %}
-                    {% for aula in aulas %}
-                        <div class="aulas">
-                            <h1 >{{ aula.titulo }}</h2>
-                                <video controls>
-                                    <source src=" {{aula.video.url}}" type="video/mp4">
-                                    Seu navegador não suporta o formato de vídeo.
-                                </video>
-                            <p>{{aula.descricao}}</p>
-                            <a href="{% url 'deletar_aula' aula.id %}">Excluir</a>
-                                
-                            
-                        </div>
-                    {% endfor %}
-            {% else %}
-                <p>Este curso ainda não tem aulas.</p>
-            {% endif %}
+    <nav>
+        <div id="logo">
+            <h1 id="logo">EduConecta</h1>
         </div>
-    </div>
-    
-    
+
+        <div id="cabecalho">
+            <a href="">Cursos</a>
+        </div>
+</nav>
+    <main>
+        <h1>Detalhes do curso: {{curso.titulo}}</h1>
+                <p>{{curso.criado_em}}</p>
+                <img src="{{curso.image.url}}" width="300" alt="{{curso.titulo}}">
+                <p>{{curso.descricao}}</p>
+            <div class="botoes">
+                <a class="botao" href="{% url 'curso-update' curso.id %}">Atualizar</a>
+                <a class="botao" href="{% url 'deletar-curso' curso.id %}">Deletar</a>
+                <a class="botao" href="{% url 'adicionar_aula' curso.id %}">Adicionar Nova Aula</a>
+            </div>
+            <div class="conteudo">
+                {% if aulas %}
+                        {% for aula in aulas %}
+                            <div class="cursos" class="aulas">
+                                <h1>{{ aula.titulo }}</h2>
+                                <img src="{{aula.video.url}}" width="150" alt="{{curso.title}}">
+                                <p>{{aula.descricao}}</p>
+                                <p>{{aula.id}} </p>
+                                <a class="botao2" href="{% url 'deletar_aula' aula.id %}">Excluir</a>
+                            </div>
+                            <div class="cursos">Item 1</div>
+                            <div class="cursos">Item 2</div>
+                        {% endfor %}
+                {% else %}
+                    <p>Este curso ainda não tem aulas.</p>
+                {% endif %}
+            </div>
+        
+    </main>
 
 </body>
 </html>

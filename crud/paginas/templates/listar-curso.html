@@ -5,27 +5,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-
-    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}" />
+    <link rel="stylesheet" type="text/css" href="../../static/listarCursostyle.css" />
 
     <title>Listar Curso</title>
 </head>
 <body>
-    <p>HELLO GUYS</p>
-    <a href="{% url 'criar-curso' %}">Criar um curso</a>
-    <div class="conteudo">
-     {% for curso in cursos %}
-            <div class="cursos">
-                
-                <h2>{{curso.titulo}}</h2>
-                <img src="{{curso.image.url}}" width="150" alt="{{curso.title}}">
-			    <p>{{curso.descricao}}</p>
-                
-                <a href="{% url 'curso-detalhes' curso.id %}">Ver</a> 
-            
+    <nav>
+            <div id="logo">
+                <h1 id="logo">EduConecta</h1>
             </div>
-	{% endfor %}
-    </div>
-    <p>UEEEE</p>
+
+            <div id="cabecalho">
+                <a href="">Cursos</a>
+                <a href="">Login</a>
+                <a href="">Cadastre-se</a>
+            </div>
+    </nav>
+    <main>
+        <h1>Seja bem vindo</h1>
+        
+        <img src="https://img-c.udemycdn.com/notices/web_carousel_slide/image/6caba229-b963-4af8-84b8-f71693be2507.jpg" alt="img udemy">
+        <a class="botao" href="{% url 'criar-curso' %}">Criar um curso</a>
+        <div class="conteudo">
+         {% for curso in cursos %}
+                <div class="cursos">
+        
+                    <h2>{{curso.titulo}}</h2>
+                    <img src="{{curso.image.url}}" width="150" alt="{{curso.title}}">
+                        <p>{{curso.descricao}}</p>
+        
+                    <a class="botao2" href="{% url 'curso-detalhes' curso.id %}">Ver</a>
+        
+                </div>
+                <div class="cursos">Item 1</div>
+                <div class="cursos">Item 2</div>
+                <div class="cursos">Item 3</div>
+                <div class="cursos">Item 3</div>
+                
+            {% endfor %}
+        </div>
+    </main>
+    <footer>
+        <p>desenvolvido para disciplina de POO</p>
+    </footer>
 </body>
 </html>
