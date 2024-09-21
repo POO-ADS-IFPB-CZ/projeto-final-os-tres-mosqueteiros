@@ -4,14 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../../static/adicionarAulastyle.css">
 </head>
 <body>
-<h1>Adicionar Aula ao Curso: {{ curso.nome }}</h1>
+    <nav>
+        <div id="logo">
+            <h1 id="logo">EduConecta</h1>
+        </div>
 
-<form method="POST" enctype="multipart/form-data">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Salvar Aula</button>
-</form>
+        <div id="cabecalho">
+            <a href="">Cursos</a>
+        </div>
+</nav>
+<main>
+    <h1>Adicionar Aula ao Curso: {{ curso.nome }}</h1>
+    
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Salvar Aula</button>
+    </form>
+</main>
 </body>
 </html>

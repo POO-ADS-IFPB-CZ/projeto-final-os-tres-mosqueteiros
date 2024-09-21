@@ -4,32 +4,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../static/cursoDetalhestyle.css">
     <title>Document</title>
 </head>
 <body>
-    <h1>Detalhes do curso: {{curso.titulo}}</h1>
-		<p>{{curso.criado_em}}</p>
-		<img src="{{curso.image.url}}" width="300" alt="{{curso.titulo}}">
-        <p>{{curso.descricao}}</p>  
-        <a href="{% url 'curso-update' curso.id %}">Atualizar</a>
-        <a href="{% url 'deletar-curso' curso.id %}">Deletar</a>
-        <a href="{% url 'adicionar_aula' curso.id %}">Adicionar Nova Aula</a>
-        {% if aulas %}
-                {% for aula in aulas %}
-                    <div class="aulas">
-                        <h1>{{ aula.titulo }}</h2>
-                        <img src="{{aula.video.url}}" width="150" alt="{{curso.title}}">
-                        <p>{{aula.descricao}}</p>
-                        <p>{{aula.id}} </p>
-                        <a href="{% url 'deletar_aula' aula.id %}">Excluir</a>
-                            
-                        
-                    </div>
-                {% endfor %}
-        {% else %}
-            <p>Este curso ainda não tem aulas.</p>
-        {% endif %}
+    <nav>
+        <div id="logo">
+            <h1 id="logo">EduConecta</h1>
+        </div>
+
+        <div id="cabecalho">
+            <a href="">Cursos</a>
+        </div>
+</nav>
+    <main>
+        <h1>Detalhes do curso: {{curso.titulo}}</h1>
+                <p>{{curso.criado_em}}</p>
+                <img src="{{curso.image.url}}" width="300" alt="{{curso.titulo}}">
+                <p>{{curso.descricao}}</p>
+            <div class="botoes">
+                <a class="botao" href="{% url 'curso-update' curso.id %}">Atualizar</a>
+                <a class="botao" href="{% url 'deletar-curso' curso.id %}">Deletar</a>
+                <a class="botao" href="{% url 'adicionar_aula' curso.id %}">Adicionar Nova Aula</a>
+            </div>
+            <div class="conteudo">
+                {% if aulas %}
+                        {% for aula in aulas %}
+                            <div class="cursos" class="aulas">
+                                <h1>{{ aula.titulo }}</h2>
+                                <img src="{{aula.video.url}}" width="150" alt="{{curso.title}}">
+                                <p>{{aula.descricao}}</p>
+                                <p>{{aula.id}} </p>
+                                <a class="botao2" href="{% url 'deletar_aula' aula.id %}">Excluir</a>
+                            </div>
+                            <div class="cursos">Item 1</div>
+                            <div class="cursos">Item 2</div>
+                        {% endfor %}
+                {% else %}
+                    <p>Este curso ainda não tem aulas.</p>
+                {% endif %}
+            </div>
         
+    </main>
 
 </body>
 </html>
