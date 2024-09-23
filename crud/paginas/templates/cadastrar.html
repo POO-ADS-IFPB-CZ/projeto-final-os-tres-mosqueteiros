@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login de Usuário</title>
+    <title>Cadastro de Usuário</title>
 </head>
 <body>
     <nav>
@@ -17,13 +17,12 @@
         </div>
     </nav>
     <div action='' class="container">
-        <h1>Login Usuário</h1>
+        <h1>Cadastro de Usuário</h1>
         <form method="post">
             {% csrf_token %}
             {{ form.as_p }}
-            <button type="submit">entrar</button>
+            <button type="submit">criar</button>
         </form>
     </div>
 </body>
 </html>
-

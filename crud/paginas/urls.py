@@ -1,6 +1,8 @@
 from django.urls import path
 from . import views 
 from django.contrib.auth import views as auth_views
+from .views import CriarUsuario
+
 
 urlpatterns = [
     path('',views.listar_cursos,name='listar-curso'),
@@ -16,4 +18,5 @@ urlpatterns = [
     path('login/', auth_views.LoginView.as_view(
          template_name='form.html'), name='login'),
     path('logout/', auth_views.LogoutView.as_view(), name='logout'),
+    path('registrar/', CriarUsuario.as_view(), name='registrar'),
 ]
