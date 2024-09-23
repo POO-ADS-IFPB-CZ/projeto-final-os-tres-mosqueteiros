@@ -15,8 +15,16 @@
             </div>
 
             <div id="cabecalho">
+                {% if user.is_authenticated %}
+                <p id='usuario' > {{ request.user }} </p>
                 <a href="">Cursos</a>
-                <a href="">Login</a>
+                    <form action="{% url 'logout' %}" method="post" style="display: inline;">
+                        {% csrf_token %}   
+                        <button class='link-button' type="submit">Logout</button>
+                    </form>
+                {% else %}
+                    <a href="{% url 'login' %}">Login</a>
+                {% endif %}
                 <a href="">Cadastre-se</a>
             </div>
     </nav>
@@ -24,21 +32,25 @@
         <h1>Seja bem vindo</h1>
         
         <img src="https://img-c.udemycdn.com/notices/web_carousel_slide/image/6caba229-b963-4af8-84b8-f71693be2507.jpg" alt="img udemy">
+        {% if user.is_authenticated %}
         <a class="botao" href="{% url 'criar-curso' %}">Criar um curso</a>
-        <div class="conteudo">
-         {% for curso in cursos %}
-                <div class="cursos">
+        {% endif %}
+        {% if user.is_authenticated %}
+            <div class="conteudo">
+             {% for curso in cursos %}
+                    <div class="cursos">
+                        
+                        <h2>{{curso.titulo}}</h2>
+                        <img src="{{curso.image.url}}" width="150" alt="{{curso.title}}">
+                            <p>{{curso.descricao}}</p>
         
-                    <h2>{{curso.titulo}}</h2>
-                    <img src="{{curso.image.url}}" width="150" alt="{{curso.title}}">
-                        <p>{{curso.descricao}}</p>
+                        <a class="botao2" href="{% url 'curso-detalhes' curso.id %}">Ver</a>
         
-                    <a class="botao2" href="{% url 'curso-detalhes' curso.id %}">Ver</a>
-        
-                </div>
+                    </div>
                 
-            {% endfor %}
-        </div>
+                {% endfor %}
+            </div>
+        {% endif %}
     </main>
     <footer>
         <p>desenvolvido para disciplina de POO</p>

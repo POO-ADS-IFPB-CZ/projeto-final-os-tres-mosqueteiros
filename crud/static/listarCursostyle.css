@@ -19,14 +19,24 @@ body > nav {
     justify-content: flex-start;
     
 }
-#cabecalho > a{
+#cabecalho > *{
     text-decoration: none;
     color: #BAD9D9;
     padding: 25px 15px;
     font-size: 30px;
     font-family: Arial, Helvetica, sans-serif;
-    
 }
+
+.link-button {
+    background: none; /* Remove o fundo */
+    border: none; /* Remove a borda */
+    color: #1CA6A6; /* Cor do texto */
+    text-decoration: underline; /* Adiciona sublinhado, como um link */
+    cursor: pointer; /* Mostra o cursor de pointer */
+    font-family: Arial, Helvetica, sans-serif; /* Define a fonte */
+    padding: 0; /* Remove o padding */
+}
+
 #logo{
     background-color: #1CA6A6;
     color: #BAD9D9;

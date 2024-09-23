@@ -32,3 +32,4 @@ class Aulas(models.Model):
 
     def __str__(self):
         return f'{self.titulo} ({self.curso.nome})'
+   
