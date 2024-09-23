@@ -12,6 +12,7 @@ urlpatterns = [
     # URLS relacionado as Aulas 
     path('curso/<int:curso_id>/adicionar_aula/', views.adicionar_aula, name='adicionar_aula'),
     path('aula/deletar/<int:id>/', views.deletar_aula, name='deletar_aula'),
+    path('aula-update/<int:id>', views.aula_update, name='aula_update'),
     
     path('login/', auth_views.LoginView.as_view(
          template_name='form.html'), name='login'),

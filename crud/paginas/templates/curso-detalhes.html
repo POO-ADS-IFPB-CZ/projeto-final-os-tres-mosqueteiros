@@ -43,6 +43,7 @@
                                     <h2>{{ aula.titulo }}</h2>
                                 <p>{{aula.descricao}}</p>
                                 {% if request.user == curso.usuario %}
+                                <a class="botao2" href="{% url 'aula_update' aula.id %}">Editar</a>
                                 <a class="botao2" href="{% url 'deletar_aula' aula.id %}">Excluir</a>
                                 {% endif %}
                             </div>

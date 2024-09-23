@@ -21,4 +21,3 @@ class AulaForm(forms.ModelForm):
     class Meta:
         model = Aulas
         fields = ['titulo', 'descricao', 'video'] 
-    
