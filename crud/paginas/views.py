@@ -21,8 +21,9 @@ def criar_curso(request):
      if request.method == 'POST':
         form = CursoForm(request.POST, request.FILES) # pega as informações do form
         if form.is_valid(): # se for valido
-            form = form.save(commit=False)
-            form.save() 
+            curso = form.save(commit=False)  # Não salva ainda
+            curso.usuario = request.user     # Associa o curso ao usuário logado
+            curso.save() 
             
             messages.success(request, 'O curso foi criado com sucesso') 
             return HttpResponseRedirect(reverse('listar-curso')) 

@@ -50,8 +50,11 @@ label{
 }
 input{
     height: 30px;
-    border-radius: 5px;
-    border: 2px;
+    border-radius: 5px 0 0 5px;
+    border: none; 
+    border-bottom: 3px solid #ffffff;
+    background-color: transparent;
+    color: #ffffff;
 }
 textarea{
     resize: none;
@@ -61,7 +64,7 @@ textarea{
     margin: 0;
 
 }
-h1{
+h1,h2{
     text-align: center;
 }
 
@@ -73,30 +76,30 @@ input[type="file"] {
     border-radius: 5px; 
     text-align: center; 
     transition: background-color 0.3s; /* Efeito de transição */
+    background-color: transparent;
     
 }
 
 button {
     width: 45%;
-    background-color: #28a745; 
+    background-color: #1CA6A6;
     color: white; 
     border: none; 
     padding: 12px 24px; 
     border-radius: 5px; 
     font-size: 16px; 
-    margin-top: 5%;
+    margin-top: 10%;
     cursor: pointer; 
-    transition: background-color 0.3s, transform 0.2s; /* Transição suave para o efeito */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra */
+    transition: background-color 0.3s, transform 0.2s; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
 }
 
 button:hover {
-    background-color: #218838; /* Cor de fundo ao passar o mouse */
-    transform: scale(1.05); /* Aumenta levemente o tamanho */
+    background-color: #0f5959; 
 }
 
 button:active {
-    background-color: #1e7e34; /* Cor de fundo ao clicar */
+    background-color: #085757; /* Cor de fundo ao clicar */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Reduz a sombra ao clicar */
     transform: scale(1); /* Volta ao tamanho normal */
 }
