@@ -1,5 +1,9 @@
 from django import forms
 from .models import Curso, Aulas
+from django.contrib.auth.forms import UserCreationForm
+from django import forms
+from django.contrib.auth.models import User
+
 
 
 class CursoForm(forms.ModelForm):
@@ -21,3 +25,4 @@ class AulaForm(forms.ModelForm):
     class Meta:
         model = Aulas
         fields = ['titulo', 'descricao', 'video'] 
+    

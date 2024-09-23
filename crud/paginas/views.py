@@ -6,6 +6,28 @@ from django.contrib import messages
 from django.urls import reverse
 from django.http import HttpResponseRedirect
 from .forms import AulaForm 
+from django.contrib.auth.models import User
+from django.views.generic.edit import CreateView
+from .forms import UsuarioForm
+from django.urls import reverse_lazy
+# from django.contrib.auth.mixins import LoginRequiredMixin
+
+
+class CriarUsuario (CreateView):
+	template_name="cadastrar.html"
+	# model = User
+	# fields = ['username','email','password']
+	form_class = UsuarioForm
+	success_url = reverse_lazy('login')
+"""
+	def get_context_data(self, *args, **kwargs):
+		context = super().get.context.data(*args, **kwargs)
+		
+		context['titulo'] = "Registro de novo usuário"
+		context['botao'] = registrar
+
+		return context
+"""
 
 
 def listar_cursos(request):
@@ -16,7 +38,7 @@ def listar_cursos(request):
     } 
     return render(request,template_name,{'cursos': cursos})
 
-
+# @login_required(login_url='/login/')  # Redireciona para a página de login se não estiver autenticado
 def criar_curso(request):
      if request.method == 'POST':
         form = CursoForm(request.POST, request.FILES) # pega as informações do form
