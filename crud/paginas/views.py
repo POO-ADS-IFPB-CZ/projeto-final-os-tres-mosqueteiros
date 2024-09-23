@@ -43,8 +43,9 @@ def criar_curso(request):
      if request.method == 'POST':
         form = CursoForm(request.POST, request.FILES) # pega as informações do form
         if form.is_valid(): # se for valido
-            form = form.save(commit=False)
-            form.save() 
+            curso = form.save(commit=False)  # Não salva ainda
+            curso.usuario = request.user     # Associa o curso ao usuário logado
+            curso.save() 
             
             messages.success(request, 'O curso foi criado com sucesso') 
             return HttpResponseRedirect(reverse('listar-curso')) 
@@ -68,7 +69,7 @@ def curso_update(request, id):
     if form.is_valid(): # se for valido
         form.save() # salva
         
-        messages.success(request, 'O post foi atualizado com sucesso') # mensagem quando cria o curso
+        messages.success(request, 'O curso foi atualizado com sucesso') # mensagem quando cria o curso
         return HttpResponseRedirect(reverse('curso-detalhes', args=[curso.id])) # coloquei para retornar curso-detalhes
          
     return render(request, 'criar-curso.html', {"form": form}) # nesse template
@@ -101,5 +102,16 @@ def deletar_aula(request, id):
     idCurso = aula.curso.id
     aula.delete() # deletar
 
-    messages.success(request, 'a aula foi deletada com sucesso') # quando deleta curso
+    messages.success(request, 'a aula foi deletada com sucesso')
     return redirect('curso-detalhes', idCurso)
+
+def aula_update(request, id):
+    aula = get_object_or_404(Aulas, id=id) 
+    form = AulaForm(request.POST or None, request.FILES or None, instance=aula) 
+    if form.is_valid(): 
+        form.save() 
+        
+        messages.success(request, 'a aula foi atualizado com sucesso') 
+        return HttpResponseRedirect(reverse('curso-detalhes', args=[aula.curso])) 
+         
+    return render(request, 'adicionar_aula.html', {"form": form}) 

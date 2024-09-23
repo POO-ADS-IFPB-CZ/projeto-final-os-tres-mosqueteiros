@@ -75,7 +75,7 @@ body > main > img{
       border-radius: 20px;
       padding: 20px;
       box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.05);
-      height: 450px;
+    
 
 }
 .cursos{
@@ -84,13 +84,37 @@ body > main > img{
     padding: 20px;
     margin: 5px;
     border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s;
       
 }
 h2{
-    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    transition: color 0.3s;
+    text-transform: uppercase; 
+    letter-spacing: 1px;        
+    border-bottom: 2px solid #2980b9;
+    padding-bottom: 10px;
+    
 }
+#imagem{
+    height: 20%;
+    align-self: center;
+}
+
 p{
     text-align: start;
+    height: 40%;
+    margin-left:10% ;
+    color: #4d5252;
 }
 .botao{
     background-color: #1CA6A6;
@@ -115,10 +139,12 @@ p{
     border-radius: 10px;
     margin: 20px;
     text-decoration: none;
-    width: 8%;
+    width: 90%;
+    text-align: center;
     font-family: Arial, Helvetica, sans-serif;
     color: #BAD9D9;
     font-size: 14px;
+    align-self: center;
     
 }
 nav>a .botao .botao2{
@@ -146,9 +172,41 @@ footer{
 
     
 }
+#pFooter{
+    text-align: center;
+    width: 100%;
+    color: #f1f1f1;
+    margin: 0;
+}
+
 @media (max-width: 1400px) {
     body > main > img{
         height: 350px;
     }
   }
+
+
+  ::-webkit-scrollbar {
+    width: 8px; 
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #6b6666; 
+    border-radius: 10px;  
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #b3b3b3; 
+    border-radius: 10px;     
+    border: 2px solid #f1f1f1; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #8a8a8a; 
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
 
