@@ -25,6 +25,7 @@ class AulaForm(forms.ModelForm):
     class Meta:
         model = Aulas
         fields = ['titulo', 'descricao', 'video'] 
+
         
         
 class UsuarioForm(UserCreationForm):
@@ -33,4 +34,3 @@ class UsuarioForm(UserCreationForm):
 	class Meta:
 		model = User
 		fields = ['username','email','password1','password2']
-  

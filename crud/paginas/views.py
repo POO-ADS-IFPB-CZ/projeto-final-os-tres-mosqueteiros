@@ -112,6 +112,6 @@ def aula_update(request, id):
         form.save() 
         
         messages.success(request, 'a aula foi atualizado com sucesso') 
-        return HttpResponseRedirect(reverse('curso-detalhes', args=[aula.curso])) 
+        return HttpResponseRedirect(reverse('curso-detalhes', args=[aula.curso.id])) 
          
     return render(request, 'adicionar_aula.html', {"form": form}) 
