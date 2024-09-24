@@ -33,4 +33,10 @@ class Aulas(models.Model):
 
     def __str__(self):
         return f'{self.titulo} ({self.curso.nome})'
-   
+
+class Perfil(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    image = models.ImageField('image/', blank=True)
+
+    def __str__(self):
+        return self.user.username

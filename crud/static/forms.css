@@ -37,6 +37,14 @@ form{
     align-items: center;
 
 }
+a{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    width: 49%;
+    color: #ffffff;
+    
+}
 
 p{
     display: flex;
@@ -88,7 +96,7 @@ button {
     padding: 12px 24px; 
     border-radius: 5px; 
     font-size: 16px; 
-    margin-top: 10%;
+    margin-top: 7%;
     cursor: pointer; 
     transition: background-color 0.3s, transform 0.2s; 
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 

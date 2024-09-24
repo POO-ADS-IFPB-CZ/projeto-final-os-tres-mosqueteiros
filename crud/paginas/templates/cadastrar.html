@@ -14,7 +14,21 @@
         <h2>Cadastro de Usuario</h1>
         <form method="post">
             {% csrf_token %}
-            {{ form.as_p }}
+            <p>Usuario
+            {{ userform.username }}
+        </p>
+            <p>Email
+            {{ userform.email }}
+        </p>
+            <p>Password
+            {{ userform.password1 }}
+        </p>
+            <p>Confirmar Senha
+            {{ userform.password2 }}
+        </p>
+
+            {{ perfilform.as_p }}
+        
             <button type="submit">entrar</button>
         </form>
     </div>

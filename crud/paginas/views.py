@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.shortcuts import get_object_or_404
 from paginas.models import  Curso, Aulas
-from .forms import CursoForm
+from .forms import CursoForm,PerfilForm
 from django.contrib import messages
 from django.urls import reverse
 from django.http import HttpResponseRedirect
@@ -10,6 +10,7 @@ from django.contrib.auth.models import User
 from django.views.generic.edit import CreateView
 from .forms import UsuarioForm
 from django.urls import reverse_lazy
+
 # from django.contrib.auth.mixins import LoginRequiredMixin
 
 
@@ -28,7 +29,22 @@ class CriarUsuario (CreateView):
 
 		return context
 """
+def registrarUsuario(request):
+    if request.method == 'POST':
+        userform = UsuarioForm(request.POST)
+        perfilform = PerfilForm(request.POST)
+        if userform.is_valid() and perfilform.is_valid():
+            user = userform.save()
+            profile = perfilform.save(commit=False)
+            profile.user = user
+            profile.save()
+            messages.success(request, 'Conta criada com sucesso!')
+            return redirect('login')  # redirecione para a página de login ou outra
+    else:
+        userform = UsuarioForm()
+        perfilform = PerfilForm()
 
+    return render(request, 'cadastrar.html', {'userform': userform, 'perfilform': perfilform})
 
 def listar_cursos(request):
     template_name = 'listar-curso.html'

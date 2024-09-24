@@ -75,7 +75,7 @@ main {
 
 }
 .cursos{
-    height: 450px;
+    height: auto;
     background-color:#F2F2F2;
       padding: 20px ;
       margin: 0px 5px;

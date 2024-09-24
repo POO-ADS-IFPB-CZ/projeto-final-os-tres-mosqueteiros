@@ -5,7 +5,7 @@ from .views import CriarUsuario
 
 
 urlpatterns = [
-    path('',views.listar_cursos,name='listar-curso'),
+    path('home',views.listar_cursos,name='listar-curso'),
     path('criar-curso', views.criar_curso, name='criar-curso'),
     path('curso-detalhes/<int:id>/', views.curso_detalhes, name='curso-detalhes'),
     path('curso-update/<int:id>', views.curso_update, name='curso-update'),
@@ -16,8 +16,8 @@ urlpatterns = [
     path('aula/deletar/<int:id>/', views.deletar_aula, name='deletar_aula'),
     path('aula-update/<int:id>', views.aula_update, name='aula_update'),
     
-    path('login/', auth_views.LoginView.as_view(
+    path('', auth_views.LoginView.as_view(
          template_name='form.html'), name='login'),
     path('logout/', auth_views.LogoutView.as_view(), name='logout'),
-    path('registrar/', CriarUsuario.as_view(), name='registrar'),
+    path('registrar/', views.registrarUsuario, name='registrar'),
 ]
