@@ -10,8 +10,11 @@ body > nav {
     grid-template-columns: repeat(2,1fr);
 
 }
-
-#cabecalho{
+#logout{
+    transition: background-color 0.3s ease;
+    padding: 0px 0px;
+}
+.cabecalho{
     background-color: #1CA6A6;
    
     display: flex;
@@ -19,7 +22,7 @@ body > nav {
     justify-content: flex-start;
     
 }
-#cabecalho > *{
+.cabecalho > *{
     text-decoration: none;
     color: #BAD9D9;
     padding: 25px 15px;
@@ -147,7 +150,15 @@ p{
     align-self: center;
     
 }
-nav>a .botao .botao2{
+.botao3{
+    border: none;
+    color: #BAD9D9;
+    background-color: #1CA6A6;
+    font-size: 30px;
+    padding: 25px 15px;
+    
+}
+nav>a .botao .botao2 {
     transition: background-color 0.3s ease;
 }
   .botao2:hover{
@@ -158,7 +169,11 @@ color: #1CA6A6;
     background-color: #BAD9D9;
     color: #1CA6A6;
 }
-#cabecalho >a:hover{
+.botao3:hover{
+    background-color: #BAD9D9;
+    color: #1CA6A6;
+}
+.cabecalho >a:hover{
     background-color: #BAD9D9;
     color: #1CA6A6;
 }

@@ -14,11 +14,11 @@
                 <h1 id="logo">EduConecta</h1>
             </div>
 
-            <div id="cabecalho">
+            <div class="cabecalho">
                 {% if user.is_authenticated %}
-                    <form action="{% url 'logout' %}" method="post" style="display: inline;">
+                    <form id="logout" action="{% url 'logout' %}" method="post" style="display: inline;">
                         {% csrf_token %}   
-                        <button class='botao' type="submit">Logout</button>
+                        <button class='botao3' type="submit">Logout</button>
                     </form>
                 {% else %}
                     <a href="{% url 'login' %}">Login</a>
