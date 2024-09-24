@@ -16,10 +16,9 @@
 
             <div id="cabecalho">
                 {% if user.is_authenticated %}
-                <a href="">Cursos</a>
                     <form action="{% url 'logout' %}" method="post" style="display: inline;">
                         {% csrf_token %}   
-                        <button class='link-button' type="submit">Logout</button>
+                        <button class='botao' type="submit">Logout</button>
                     </form>
                 {% else %}
                     <a href="{% url 'login' %}">Login</a>
