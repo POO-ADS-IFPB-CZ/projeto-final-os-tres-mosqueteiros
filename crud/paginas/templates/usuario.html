@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'usuario.css' %}">
+    <title>Usuários</title>
+</head>
+<body>
+    <nav>
+        <div id="logo">
+            <h1 id="logo">EduConecta</h1>
+        </div>
+</nav>
+
+<main>
+    <div id="dados">
+        <h2>Perfil de :{{ usuario.username }}</h2>
+                <strong>Username:</strong> {{ user.username }}<br>
+                <br><strong>E-mail:</strong> {{ user.email }}<br>
+                <br>
+                <div class="lugarbotao">
+                    <a class="botao2" href="{% url 'deletar_usuario' user.id %}">Excluir</a>
+                    <a class="botao2" href="{% url 'alterar_usuario' user.id %}">Alterar</a>
+                </div>
+    </div>
+</main>
+</html>

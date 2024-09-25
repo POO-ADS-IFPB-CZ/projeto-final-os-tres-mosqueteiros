@@ -1,0 +1,137 @@
+body{
+    background: linear-gradient(to bottom, #1CA6A6 15%, #F2F2F2 85%);
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+body > nav {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+
+}
+
+#cabecalho{
+    background-color: #1CA6A6;
+   
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+    
+}
+#cabecalho > a{
+    text-decoration: none;
+    color: #BAD9D9;
+    padding: 25px 15px;
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif; 
+}
+
+#logo{
+    background-color: #1CA6A6;
+    color: #BAD9D9;
+    display: flex;
+    flex-direction: row;
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+main{margin: 20px;
+        
+}
+body > main > h1{
+text-align: center;
+font-family: Arial, Helvetica, sans-serif;
+color: #8C031C;
+margin: 0px;
+
+}
+body > main > img{
+    display: block;
+    margin: auto;
+    border-radius: 15px;
+    height: 500px;
+    width: 60%;
+    margin-bottom: 30px;
+    
+}
+main {
+    display: flex;
+    flex-direction: column;
+}
+.descricao-curso{
+    align-self: center;
+    width: 60%;
+    background-color: rgb(0,0,0,0.2);
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 1.5rem;
+}
+.conteudo{
+    background-color: #F2F2F2;
+    display: grid;
+      grid-template-columns: repeat(4,1fr);
+      gap: 20px;
+      border-radius: 20px;
+      padding: 20px;
+      box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.05);
+
+}
+.cursos{
+    height: auto;
+    background-color:#F2F2F2;
+      padding: 20px ;
+      margin: 0px 5px;
+      text-align: center;
+      border-radius: 10px;
+      border: 3px solid #1CA6A6;
+      
+}
+.botoes{
+    display: flex;
+}
+.botao{
+    background-color: #1CA6A6;
+    padding: 12px;
+    border-radius: 10px;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-bottom: 8px;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #BAD9D9;
+    font-size: 18px;
+    
+}
+.botao2{
+    
+    background-color: #1CA6A6;
+    padding: 6px 9px;
+    border-radius: 10px;
+    margin: 20px;
+    text-decoration: none;
+    width: 8%;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #BAD9D9;
+    font-size: 18px;
+    
+}
+nav>a .botao .botao2{
+    transition: background-color 0.3s ease;
+}
+  .botao2:hover{
+background-color: #BAD9D9;
+color: #1CA6A6;
+}
+.botao:hover{
+    background-color: #BAD9D9;
+    color: #1CA6A6;
+}
+#cabecalho >a:hover{
+    background-color: #BAD9D9;
+    color: #1CA6A6;
+}
+
+iframe{
+    width: 100%;
+}

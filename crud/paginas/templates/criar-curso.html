@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="{% static 'criarCurso.css' %}" />
+    <title>Document</title>
+</head>
+<body>
+	<nav>
+	<div id="logo">
+		<h1 id="logo">EduConecta</h1>
+	</div>
+
+	<div id="cabecalho">
+		<a href="">Cursos</a>
+	</div>
+</nav>
+    <main>
+		<form method="post" 
+				action="{% if request.method == 'POST' %}{% url 'post-create' %}{% endif %}"
+				enctype="multipart/form-data">
+		
+				{% csrf_token %}
+				{{ form.as_p }}
+				<button type="submit">Criar</button> 
+			</form>
+			<section>
+				<div class="estruturabloco">
+					<img src="https://static.planejativo.com/wp-content/uploads/2020/05/Tablet-ou-notebook-qual-escolher-para-estudar_-768x512-1.jpg" alt="">
+					<div class="texto">
+						<h1>Crie um curso atrativo</h1>
+						<p>Você poderá criar um curso atrativo, mesmo que esta seja a primeira vez que fará isso ou que você já tenha experiência de muitos anos. Compilamos os recursos e as práticas recomendadas para ajudá-lo a alcançar outro patamar de qualidade, independentemente do seu ponto de partida.</p>
+					</div>
+				</div>
+				<div class="blocoAoLado">
+					<div class="estruturabloco"><img src="https://img.freepik.com/vetores-premium/adolescente-se-comunicando-com-um-amigo-no-computador-por-uma-camera-de-video-isolada-plana-personagem-de-desenho-animado_316839-1163.jpg?w=740" alt="">
+						<div class="texto">
+							<h1>Comece agora com vídeo</h1>
+							<p>Aulas em vídeo de alta qualidade podem ser um diferencial de seu curso. Use nossos recursos para aprender os princípios básicos.</p>
+						</div></div>
+					<div class="estruturabloco"><img src="https://educamundo.com.br/wp-content/uploads/elementor/thumbs/formas-comunicacao-educamundo-02-1-qp42x1ninvi2q296606ss1926nwszqbzgyj23jtnkk.webp" alt="">
+						<div class="texto">
+							<h1>Conquiste seu público</h1>
+							<p>Prepare seu curso para o sucesso conquistando seu público.</p>
+						</div></div>
+				</div>
+			</section>
+	</main>
+</body>
+</html>

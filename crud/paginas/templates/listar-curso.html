@@ -1,0 +1,59 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'listarCursostyle.css' %}">
+
+    <title>Listar Curso</title>
+</head>
+<body>
+    <nav>
+            <div id="logo">
+                <h1 id="logo">EduConecta</h1>
+            </div>
+
+            <div class="cabecalho">
+                {% if user.is_authenticated %}
+                    <form id="logout" action="{% url 'logout' %}" method="post" style="display: inline;">
+                        {% csrf_token %}   
+                        <button class='botao3' type="submit">Logout</button>
+                    </form>
+                {% else %}
+                    <a href="{% url 'login' %}">Login</a>
+                {% endif %}
+                <a href="registrar">Cadastre-se</a>
+                <a href="perfil">{{ user.get_username }}</a>
+            </div>
+    </nav>
+    <main>
+        <h1>Seja bem vindo</h1>
+        
+        <img src="https://img-c.udemycdn.com/notices/web_carousel_slide/image/6caba229-b963-4af8-84b8-f71693be2507.jpg" alt="img udemy">
+        {% if user.is_authenticated %}
+        <a class="botao" href="{% url 'criar-curso' %}">Criar um curso</a>
+        {% endif %}
+        {% if user.is_authenticated %}
+            <div class="conteudo">
+             {% for curso in cursos %}
+                    <div class="cursos">
+                        
+                        <h2>{{curso.titulo}}</h2>
+                        <img id="imagem" src="{{curso.image.url}}" width="150" alt="{{curso.title}}">
+                            <p>{{curso.descricao}}</p>
+                            
+        
+                        <a class="botao2" href="{% url 'curso-detalhes' curso.id %}">Ver</a>
+        
+                    </div>
+                
+                {% endfor %}
+            </div>
+        {% endif %}
+    </main>
+    <footer>
+        <p id="pFooter">desenvolvido para disciplina de POO</p>
+    </footer>
+</body>
+</html>

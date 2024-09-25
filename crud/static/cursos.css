@@ -1,0 +1,70 @@
+body{
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, sans-serif;
+    /*background: linear-gradient(to bottom, rgb(38, 90, 222) 0%, rgba(0, 0, 0) 100%); */
+}
+.titulo-curso{
+    width: 60%;
+    height: 300px;
+    background-size:cover;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: end;
+    color: aliceblue;
+    border-radius: 10px;
+
+}
+.conteudo{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    background-color: #ffffff;
+}
+.titulo{
+    background: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente */
+    margin: 0;
+    border-radius: 10px;
+    color: #ffffff;
+}
+.bloco-aulas{
+    width: 100%;
+}
+.h1aula{
+    background-color: rgb(7, 55, 138);
+    border-radius: 3px;
+    color: #ffffff;
+    height: 50px;
+    width: 100%;
+}
+.botoes{
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    width: 60%;
+    background-color: #ffffff;
+}
+.botao{
+    height: 30px;
+
+    border-radius: 5px;
+    margin-right: 5px;
+    text-align: center;
+    align-content: center;
+    color: #ffffff;
+    padding: 5px;
+    font-size: 0.80rem;
+}
+#atualizar{
+    background-color: blue;
+}
+#adicionar{
+    background-color: #1e7e34;
+}
+#excluir{
+    background-color: rgb(255, 13, 0);
+}

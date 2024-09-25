@@ -1,0 +1,59 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'cursoDetalhestyle.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <div id="logo">
+            <h1 id="logo">EduConecta</h1>
+        </div>
+
+        <div id="cabecalho">
+            <a  href="{% url 'listar-curso'%}">Cursos</a>
+        </div>
+</nav>
+    <main>
+        <h1>{{curso.titulo}}</h1>
+                <p>{{curso.criado_em}}</p>
+                <img src="{{curso.image.url}}" width="300" alt="{{curso.titulo}}">
+            {% if request.user == curso.usuario %}
+            <div class="botoes">
+                <a class="botao" href="{% url 'curso-update' curso.id %}">Atualizar</a>
+                <a class="botao" href="{% url 'deletar-curso' curso.id %}">Deletar</a>
+                <a class="botao" href="{% url 'adicionar_aula' curso.id %}">Adicionar Nova Aula</a>
+            </div>
+            {% endif %}
+            <div class="conteudo">
+                {% if aulas %}
+                        {% for aula in aulas %}
+                            <div class="cursos" class="aulas">
+                                <h1>Aula {{ forloop.counter }}</h1>
+                                
+                                    <iframe
+                                        src="{{ aula.video }}" 
+                                        title="YouTube video player" 
+                                        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                                    </iframe>
+                                    <h2>{{ aula.titulo }}</h2>
+                                <p>{{aula.descricao}}</p>
+                                {% if request.user == curso.usuario %}
+                                <a class="botao2" href="{% url 'aula_update' aula.id %}">Editar</a>
+                                <a class="botao2" href="{% url 'deletar_aula' aula.id %}">Excluir</a>
+                                {% endif %}
+                            </div>
+                        {% endfor %}
+                {% else %}
+                    <p>Este curso ainda não tem aulas.</p>
+                {% endif %}
+            </div>
+        
+    </main>
+
+</body>
+</html>
