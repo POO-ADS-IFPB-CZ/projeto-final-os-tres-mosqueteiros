@@ -36,7 +36,7 @@ class Aulas(models.Model):
 
 class Perfil(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    image = models.ImageField('image/', blank=True)
+    image = models.ImageField(upload_to='image/', blank=True, null=True)
 
     def __str__(self):
         return self.user.username
