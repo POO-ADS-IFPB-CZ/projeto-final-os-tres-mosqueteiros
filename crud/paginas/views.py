@@ -53,11 +53,12 @@ class CriarUsuario (CreateView):
 
 def registrarUsuario(request):
     if request.method == 'POST':
-        userform = UsuarioForm(request.POST)
-        perfilform = PerfilForm(request.POST)
+        userform = UsuarioForm(request.POST, request.FILES)
+        perfilform = PerfilForm(request.POST, request.FILES)
         if userform.is_valid() and perfilform.is_valid():
-            user = userform.save()
+            print(perfilform.fields['image'])
             profile = perfilform.save(commit=False)
+            user = userform.save()
             profile.user = user
             profile.save()
             messages.success(request, 'Conta criada com sucesso!')
