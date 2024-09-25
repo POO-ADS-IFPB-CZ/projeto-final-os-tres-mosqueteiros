@@ -160,3 +160,24 @@ def aula_update(request, id):
         return HttpResponseRedirect(reverse('curso-detalhes', args=[aula.curso.id])) 
          
     return render(request, 'adicionar_aula.html', {"form": form}) 
+
+def deletarUsuario(request, user_id):
+    user = get_object_or_404(User, id=user_id)
+    user.delete() 
+
+    messages.success(request, 'a aula foi deletada com sucesso')
+    return redirect('login')
+
+def alterar_usuario(request, user_id):
+    user = get_object_or_404(User, id=user_id)  
+    if request.method == 'POST':
+        userform = UsuarioForm(request.POST, instance=user) 
+
+        if userform.is_valid():
+            userform.save()  
+            messages.success(request, 'Usuário atualizado com sucesso!')
+            return HttpResponseRedirect(reverse('listar-curso'))
+    else:
+        userform = UsuarioForm(instance=user)  
+
+    return render(request, 'cadastrar.html', {'userform': userform})

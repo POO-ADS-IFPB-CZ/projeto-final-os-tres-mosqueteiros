@@ -23,5 +23,8 @@ urlpatterns = [
     path('registrar/', views.registrarUsuario, name='registrar'),
     path('perfil/', UsuarioListView.as_view(), name='perfil'),
  
-    path('logout/', custom_logout, name='logout')
+    path('logout/', custom_logout, name='logout'),
+    path('deletar-usuario/<int:user_id>/',views.deletarUsuario, name='deletar_usuario'),
+    path('alterar-usuario/<int:user_id>/', views.alterar_usuario, name='alterar_usuario'),
+    
 ]

@@ -10,5 +10,6 @@
         <h2>Perfil de {{ usuario.username }}</h2>
                 <strong>Username:</strong> {{ user.username }}<br>
                 <strong>E-mail:</strong> {{ user.email }}<br>   
-        
+                <a class="botao2" href="{% url 'deletar_usuario' user.id %}">Excluir</a>
+                <a class="botao2" href="{% url 'alterar_usuario' user.id %}">Alterar</a>
 </html>
