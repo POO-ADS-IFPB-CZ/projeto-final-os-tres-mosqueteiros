@@ -1,7 +1,8 @@
 from django.urls import path
 from . import views 
 from django.contrib.auth import views as auth_views
-from .views import CriarUsuario
+from .views import UsuarioListView
+from .views import custom_logout
 
 
 urlpatterns = [
@@ -20,4 +21,7 @@ urlpatterns = [
          template_name='form.html'), name='login'),
     path('logout/', auth_views.LogoutView.as_view(), name='logout'),
     path('registrar/', views.registrarUsuario, name='registrar'),
+    path('perfil/', UsuarioListView.as_view(), name='perfil'),
+ 
+    path('logout/', custom_logout, name='logout')
 ]

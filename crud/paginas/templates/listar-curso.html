@@ -24,6 +24,7 @@
                     <a href="{% url 'login' %}">Login</a>
                 {% endif %}
                 <a href="registrar">Cadastre-se</a>
+                <a href="perfil">{{ user.get_username }}</a>
             </div>
     </nav>
     <main>
